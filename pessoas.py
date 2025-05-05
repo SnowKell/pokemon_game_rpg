@@ -21,7 +21,7 @@ POKEMONS = [
 
 
 class Pessoa:
-    def __init__(self, nome=None, pokemons=[], dinheiro=100):
+    def __init__(self, nome=None, pokemons=None, dinheiro=100):
         if nome:
             self.nome = nome
         else:
@@ -52,7 +52,7 @@ class Pessoa:
 
     def mostrar_dinheiro(self, ):
         dinheiro = self.dinheiro
-        print('voce tem $  {} em sua conta'.format(self.dinheiro))
+        print('voce tem $  {} em sua conta'.format(dinheiro))
 
     def ganhar_dinheiro(self, quantidade):
         self.dinheiro += quantidade

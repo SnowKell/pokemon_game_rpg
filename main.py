@@ -1,4 +1,4 @@
-from pokemongame import *
+
 from pessoas import *
 import pickle
 
@@ -41,9 +41,9 @@ def salvar_jogo(player):
 def carregar_jogo():
     try:
         with open('database.db', 'rb') as arquivo:
-            player = pickle.load(arquivo)
+            loaded_player = pickle.load(arquivo)
             print('Jogo carregado')
-            return player
+            return loaded_player
     except Exception:
         print('Save não encontrado')
 
@@ -82,21 +82,21 @@ if __name__ == '__main__':
         print('3- mostrar pokemons')
         print('4- mostrar saldo')
         print('0- sair do jogo')
-        escolha = input('Qual opção? ')
+        opcao = input('Qual opção? ')
 
-        if escolha == '1':
+        if opcao == '1':
             print('ok, vamos explorar!!')
             player.explorar()
             salvar_jogo(player)
-        elif escolha == '2':
+        elif opcao == '2':
             inimigo_aleatorio = Inimigo()
             player.batalhar(inimigo_aleatorio)
             salvar_jogo(player)
-        elif escolha == '3':
+        elif opcao == '3':
             player.mostrar_pokemons()
-        elif escolha == '4':
+        elif opcao == '4':
             player.mostrar_dinheiro()
-        elif escolha == '0':
+        elif opcao == '0':
             print('fechando o jogo...')
             break
         else:

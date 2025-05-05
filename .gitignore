@@ -1,1 +1,3 @@
-lib
+pyvenv.cfg
+Lib
+.idea
